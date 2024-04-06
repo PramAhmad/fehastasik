@@ -45,7 +45,7 @@
                                   <p class="text-gray-500">Qty {{ product.quantity }}</p>
   
                                   <div class="flex">
-                                    <button type="button" class="font-medium text-sky-500 hover:text-indigo-500">Remove</button>
+                                    <button type="button" class="font-medium text-sky-500    hover:text-indigo-500">Remove</button>
                                   </div>
                                 </div>
                               </div>
@@ -62,12 +62,12 @@
                       </div>
                       <p class="mt-0.5 text-sm text-gray-500">Pengiriman dan pajak di hitung saat checkout.</p>
                       <div class="mt-6">
-                        <a href="#" class="flex items-center justify-center rounded-md border border-transparent bg-sky-500 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700">Checkout</a>
+                        <a href="#" class="flex items-center justify-center rounded-md border border-transparent bg-sky-500  px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-sky-600">Checkout</a>
                       </div>
                       <div class="mt-6 flex justify-center text-center text-sm text-gray-500">
                         <p>
                           or{{ ' ' }}
-                          <button type="button" class="font-medium text-sky-500 hover:text-indigo-500" @click="open = false">
+                          <button type="button" class="font-medium text-sky-500  hover:text-indigo-500" @click="open = false">
                             Continue Shopping
                             <span aria-hidden="true"> &rarr;</span>
                           </button>
