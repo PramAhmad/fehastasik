@@ -7,8 +7,15 @@ export default {
   // add container
   theme: {
     container: {
-    items: {
       center: true,
+      screens: {
+        sm: "100%",
+        md: "100%",
+        lg: "1024px",
+        xl: "1280px",
+      },
+
+
     },
     // padiing x
    
@@ -16,5 +23,4 @@ export default {
   },
  
   plugins: [],
-}
 }
