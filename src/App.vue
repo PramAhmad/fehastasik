@@ -1,13 +1,10 @@
 <template >
-  <div class="">
-    <router-view/>
+  <div class="bg-gray-100">
+    <router-view />
   </div>
 </template>
 <script>
-export default {
-  
-}
+export default {};
 </script>
 <style lang="">
-  
 </style>

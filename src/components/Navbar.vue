@@ -173,7 +173,7 @@
     </TransitionRoot>
     <Chart v-if="isVisibled" :status="false" />
     <header class="bg-white fixed top-0 w-full z-50">
-      <nav aria-label="Top" class="max-w-7xl">
+      <nav aria-label="Top" class="max-w-7xl items-center mx-auto">
         <div class="border-b border-gray-200">
           <div class="flex h-16 items-center">
             <button
@@ -187,7 +187,7 @@
             </button>
 
             <!-- Logo -->
-            <div class="ml-4 flex lg:ml-0">
+            <div class="ml-4 flex">
               <router-link to="#">
                 <img class="h-8 w-auto" src="../assets/hastasik.png" alt="" />
               </router-link>
@@ -312,7 +312,7 @@
               </div>
             </PopoverGroup>
 
-            <div class="ml-auto flex items-center">
+            <div class="flex ml-auto">
               <div
                 class="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6"
               >
