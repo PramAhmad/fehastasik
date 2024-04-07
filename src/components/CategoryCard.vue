@@ -1,7 +1,7 @@
 <template>
-  <div class="max-w-7xl bg-gray-100 flex flex-col overflow-x-hidden">
+  <div class="max-w-7xl bg-gray-100 flex flex-col overflow-x-hidden pb-16">
     <h1
-      class="underline text-center md:py-10 pt-5 pb-10 text-3xl font-bold text-sky-500"
+      class="font-bebas-neue uppercase text-2xl py-10 underline text-center font-black flex flex-col leading-none text-gray-800"
     >
       Product Category
     </h1>
@@ -34,7 +34,7 @@
               </div>
             </div>
             <div
-              class="p-4 w-full bg-white text-center flex justify-center bg-opacity-60 z-20 font-semibold"
+              class="p-4 w-full bg-gray-50 text-center flex justify-center bg-opacity-60 z-20"
             >
               <a class="text-xl" :href="''">{{ category.name }}</a>
             </div>
