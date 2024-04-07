@@ -2,7 +2,7 @@
   <div class="h-[200vh] w-full">
     <Navbar />
     <div class="container">
-      <div class="bg-gray-100 flex relative z-20 items-center overflow-hidden">
+      <div class="flex relative z-20 items-center overflow-hidden">
         <div
           class="container mx-auto px-6 flex relative py-20 min-h-screen items-center"
         >
