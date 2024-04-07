@@ -4,7 +4,7 @@
     <div class="container">
       <div class="flex relative z-20 items-center overflow-hidden">
         <div
-          class="container mx-auto px-6 flex relative py-20 min-h-screen items-center"
+          class="container mx-auto px-6 flex relative pt-16 min-h-screen items-center"
         >
           <div class="sm:w-2/3 lg:w-2/5 flex flex-col relative z-20">
             <span class="w-20 h-2 bg-gray-800 mb-12"></span>
@@ -42,11 +42,8 @@
         </div>
       </div>
 
-      <!-- category -->
-      <CategoryCard />
-
       <!-- all -->
-      <section class="pt-16">
+      <section class="py-16">
         <div class="py-4 px-2 mx-auto max-w-screen-xl sm:py-4 lg:px-6">
           <div
             class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4 h-full"
@@ -156,6 +153,9 @@
           </div>
         </div>
       </section>
+
+      <!-- category -->
+      <CategoryCard />
     </div>
   </div>
 </template>
