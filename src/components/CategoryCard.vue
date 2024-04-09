@@ -1,10 +1,12 @@
 <template>
-  <div class="max-w-7xl bg-gray-100 flex flex-col overflow-x-hidden pb-16">
-    <h1
-      class="font-bebas-neue uppercase text-2xl py-10 underline text-center font-black flex flex-col leading-none text-gray-800"
-    >
-      Product Category
-    </h1>
+  <div
+    class="max-w-7xl bg-gray-100 flex flex-col overflow-x-hidden pb-16 md:px0 px-6"
+  >
+    <div class="w-full border-2 bg-white py-2 border-gray-300 mb-10">
+      <h2 class="text-3xl font-semibold text-s text-center text-gray-700">
+        Category Product
+      </h2>
+    </div>
     <div ref="swiper" class="swiper-container">
       <div class="swiper-wrapper">
         <div
