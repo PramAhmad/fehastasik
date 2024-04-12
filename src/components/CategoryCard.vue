@@ -15,7 +15,7 @@
           :key="category.id"
         >
           <div
-            class="w-full h-full relative rounded-2xl p-4 border-2 border-opacity-30 dark:border-black/30 bg-white backdrop-blur bg-opacity-10 group hover:cursor-pointer mb-12 overflow-hidden"
+            class="w-full h-full relative rounded-2xl p-4 border-2 border-opacity-20 dark:border-black/30 bg-white backdrop-blur bg-opacity-10 group hover:cursor-pointer mb-12 overflow-hidden"
           >
             <div class="relative">
               <img

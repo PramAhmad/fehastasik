@@ -188,7 +188,7 @@
 
             <!-- Logo -->
             <div class="ml-4 flex">
-              <router-link to="#">
+              <router-link to="/">
                 <img class="h-8 w-auto" src="../assets/hastasik.png" alt="" />
               </router-link>
             </div>

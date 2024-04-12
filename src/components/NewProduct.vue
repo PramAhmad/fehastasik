@@ -135,14 +135,13 @@
     </div>
 </template>
  <script setup>
-let api = import.meta.env.API_URL;
 import axios from "axios";
 import { onMounted, ref } from "vue";
 
 let products = ref([]);
 
 const getData = async () => {
-  const res = await axios.get(`http://127.0.0.1:8000/api/products`);
+  const res = await axios.get(import.meta.env.VITE_API_URL + `products`);
 
   products.value = res.data.data;
   console.log(products.value);
