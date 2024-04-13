@@ -145,23 +145,46 @@
                 </div>
               </div>
 
-              <div class="space-y-6 border-t border-gray-200 px-4 py-6">
+              <div
+                class="space-y-6 border-t border-gray-200 px-4 py-6"
+                v-if="user === null"
+              >
                 <div class="flow-root">
                   <router-link
-                    to="#"
+                    to="/login"
                     class="-m-2 block p-2 font-medium text-gray-900"
                     >Sign in</router-link
                   >
                 </div>
                 <div class="flow-root">
                   <router-link
-                    to="#"
+                    to="/register"
                     class="-m-2 block p-2 font-medium text-gray-900"
                     >Create account</router-link
                   >
                 </div>
               </div>
-
+              <!-- saat ada user -->
+              <div
+                class="space-y-6 border-t border-gray-200 px-4 py-6"
+                v-if="user"
+              >
+                <div class="flow-root">
+                  <router-link
+                    to="/profile"
+                    class="-m-2 block p-2 font-medium text-gray-900"
+                    >Profile</router-link
+                  >
+                </div>
+                <div class="flow-root">
+                  <button
+                    @click="logout"
+                    class="-m-2 block p-2 font-medium text-gray-900"
+                  >
+                    Logout
+                  </button>
+                </div>
+              </div>
               <div class="border-t border-gray-200 px-4 py-6">
                 <router-link to="#" class="-m-2 flex items-center p-2">
                 </router-link>
@@ -315,18 +338,37 @@
             <div class="flex ml-auto">
               <div
                 class="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6"
+                v-if="user === null"
               >
                 <router-link
-                  to="#"
+                  to="/login"
                   class="text-sm font-medium text-gray-700 hover:text-gray-800"
                   >Sign in</router-link
                 >
                 <span class="h-6 w-px bg-gray-200" aria-hidden="true" />
                 <router-link
-                  to="#"
+                  to="/register"
                   class="text-sm font-medium text-gray-700 hover:text-gray-800"
                   >Create account</router-link
                 >
+              </div>
+              <!-- saat login -->
+              <div
+                class="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6"
+                v-if="user"
+              >
+                <router-link
+                  to="/profile"
+                  class="text-sm font-medium text-gray-700 hover:text-gray-800"
+                  >Profile</router-link
+                >
+                <span class="h-6 w-px bg-gray-200" aria-hidden="true" />
+                <button
+                  @click="logout"
+                  class="text-sm font-medium text-gray-700 hover:text-gray-800"
+                >
+                  Logout
+                </button>
               </div>
 
               <div class="hidden lg:ml-8 lg:flex">
@@ -376,8 +418,9 @@ import Chart from "../components/Chart.vue";
 components: {
   Chart;
 }
+import axios from "axios";
 const isVisibled = ref(false);
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
 import {
   Dialog,
   DialogPanel,
@@ -502,8 +545,28 @@ const navigation = {
   ],
 };
 
+const user = ref(null);
+const getUser = async () => {
+  const token = localStorage.getItem("token");
+  if (token) {
+    axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+    const res = await axios.get(import.meta.env.VITE_API_URL + `user`);
+    user.value = res.data;
+  } else {
+    axios.defaults.headers.common["Authorization"] = null;
+  }
+};
+
 function showChart() {
   isVisibled.value = !isVisibled.value;
 }
+const logout = () => {
+  localStorage.removeItem("token");
+  alert("logout berhasil");
+  window.location.reload();
+};
 const open = ref(false);
+onMounted(() => {
+  getUser();
+});
 </script>

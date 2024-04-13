@@ -14,6 +14,24 @@ const routes = [
     name: 'product',
     component: () => import('../views/ProductByIdView.vue')
   },
+  //login
+  {
+    path: '/login',
+    name: 'login',
+    component: () => import('../views/LoginView.vue')
+  },
+  //register
+  {
+    path: '/register',
+    name: 'register',
+    component: () => import('../views/RegisterView.vue')
+  },
+  // shop by category
+  {
+    path: '/category/:category',
+    name: 'category',
+    component: () => import('../views/CategoryView.vue')
+  },
 ];
 
 
