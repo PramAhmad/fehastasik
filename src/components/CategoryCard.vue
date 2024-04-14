@@ -38,7 +38,9 @@
             <div
               class="p-4 w-full bg-gray-50 text-center flex justify-center bg-opacity-60 z-20"
             >
-              <a class="text-xl" :href="''">{{ category.name }}</a>
+              <router-link :to="category.to" class="text-xl">{{
+                category.name
+              }}</router-link>
             </div>
           </div>
         </div>
@@ -62,6 +64,7 @@ export default {
           imageSrc:
             "https://lh3.googleusercontent.com/pw/AP1GczP8e9o7sW_9i_u57Dq8xBlb3TzJHAstP2eg2Cbc-nd86FFaBno6dcQL4Uc_z6RRiSvMiiBzPYklsoybUHHFtbtpqnE72YgY6Vz0eIkCymYnQdrzSTgIW53sV51iBTxLY0mj4Vr2Sg5I1hqJfEbI5YqN=w1657-h932-s-no-gm?authuser=0",
           imageAlt: "Payung Geulis",
+          to: "/product",
         },
         {
           id: 2,
@@ -69,6 +72,7 @@ export default {
           imageSrc:
             "https://id-test-11.slatic.net/p/65edac6574e3ed5e8dd9fd83c1e7f07e.jpg",
           imageAlt: "Saroja",
+          to: "/product",
         },
 
         {
@@ -77,6 +81,7 @@ export default {
           imageSrc:
             "https://img.ws.mms.shopee.co.id/id-11134207-7qul9-lfdl3gaumge23d",
           imageAlt: "Kelom Geulis",
+          to: "/product",
         },
         {
           id: 4,
@@ -84,6 +89,7 @@ export default {
           imageSrc:
             "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbCKMq0pu_OCj2VUx-V86W0rEIfSm4l_XU2LHkf690_w&s",
           imageAlt: "Batik Tasik",
+          to: "/category/batik",
         },
         {
           id: 5,
@@ -91,6 +97,7 @@ export default {
           imageSrc:
             "https://images.tokopedia.net/img/cache/700/product-1/2020/10/12/122705892/122705892_61b97055-e8e4-415a-8703-28a832914f5d_640_640",
           imageAlt: "Samak Mendong",
+          to: "/product",
         },
         {
           id: 6,
@@ -98,6 +105,7 @@ export default {
           imageSrc:
             "https://awsimages.detik.net.id/community/media/visual/2021/07/25/resep-nasi-tutug-oncom-tasik-2_43.jpeg?w=480",
           imageAlt: "Oncom Tasik",
+          to: "/product",
         },
         {
           id: 7,
@@ -105,6 +113,7 @@ export default {
           imageSrc:
             "https://images.tokopedia.net/img/cache/500-square/VqbcmM/2020/6/6/ef3b36ba-ab87-40cc-8f4d-60ff1c99d774.jpg",
           imageAlt: "Raginang",
+          to: "/product",
         },
         {
           id: 8,
@@ -112,6 +121,7 @@ export default {
           imageSrc:
             "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfzx0gW6pADhV5uJHern7WLJVyaV9pxDH2vDy0qMST3w&s",
           imageAlt: "Anyaman Bambu",
+          to: "/product",
         },
       ],
       swiper: null,

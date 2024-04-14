@@ -32,6 +32,12 @@ const routes = [
     name: 'category',
     component: () => import('../views/CategoryView.vue')
   },
+  // profile
+  {
+    path: '/profile',
+    name: 'profile',
+    component: () => import('../views/ProfileView.vue')
+  },
 ];
 
 

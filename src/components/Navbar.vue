@@ -254,7 +254,7 @@
                       />
 
                       <div class="relative bg-white border-2 max-w-7xl">
-                        <div class="max-w-7xl px-8">
+                        <div class="max-w-7xl px-8 mx-auto items-center">
                           <div class="grid grid-cols-2 gap-x-8 gap-y-10 py-16">
                             <div class="col-start-2 grid grid-cols-2 gap-x-8">
                               <div
@@ -486,7 +486,7 @@ const navigation = {
             { name: "Payung Geulis", href: "#" },
             { name: "Samak mendong", href: "#" },
             { name: "Kelom Geulis", href: "#" },
-            { name: "Batik Tasikmalaya", href: "#" },
+            { name: "Batik Tasikmalaya", href: "/category/batik" },
             { name: "Kerajinan Lainya", href: "/pram" },
           ],
         },
