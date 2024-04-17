@@ -395,16 +395,6 @@
                   >
                 </button>
               </div>
-
-              <div class="flex lg:ml-6">
-                <router-link
-                  to="#"
-                  class="p-2 text-gray-400 hover:text-gray-500"
-                >
-                  <span class="sr-only">Search</span>
-                  <UserCircleIcon class="h-6 w-6" aria-hidden="true" />
-                </router-link>
-              </div>
             </div>
           </div>
         </div>

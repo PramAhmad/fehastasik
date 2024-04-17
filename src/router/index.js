@@ -38,6 +38,48 @@ const routes = [
     name: 'profile',
     component: () => import('../views/ProfileView.vue')
   },
+  // update profile
+  {
+    path: '/profile/update',
+    name: 'update-profile',
+    component: () => import('../views/UpdateProfileView.vue')
+  },
+  // update user
+  {
+    path: '/user/update',
+    name: 'user-update',
+    component: () => import('../views/UserUpdateView.vue')
+  },
+  // alamat
+  {
+    path: '/alamat',
+    name: 'alamat',
+    component: () => import('../views/alamat/AlamatView.vue')
+  },
+  // create
+  {
+    path: '/alamat/create',
+    name: 'alamat-create',
+    component: () => import('../views/alamat/AlamatCreateView.vue')
+  },
+  // update
+  {
+    path: '/alamat/update/:id',
+    name: 'alamat-update',
+    component: () => import('../views/alamat/AlamatUpdateView.vue')
+  },
+  // about us
+  {
+    path: '/about',
+    name: 'about',
+    component: () => import('../views/AboutView.vue')
+  },
+  // contact
+  {
+    path: '/contact',
+    name: 'contact',
+    component: () => import('../views/ContactView.vue')
+  },
 ];
 
 
