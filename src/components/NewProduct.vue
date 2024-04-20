@@ -36,7 +36,7 @@
               <div class="seller-info flex items-center mt-2 ">
       <img :src="product.seller.foto" alt="" class="w-10 h-10 rounded-full border border-slate-400   mr-4">
       <div class="seller-info-details">
-        <div class=""><p class="text-slate-600 text-sm -ml-2">{{ product.seller.nama_toko }}</p></div>
+        <div class=""><router-link :to="`seller/`+product.seller.id" class="text-slate-600 text-sm -ml-2">{{ product.seller.nama_toko }}</router-link></div>
     
       </div>
     </div>

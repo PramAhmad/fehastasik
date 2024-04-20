@@ -102,13 +102,15 @@
 //kall ada token auto redirect
 
 import axios from "axios";
-import { ref } from "vue";
+import { inject, ref } from "vue";
 import router from "../router";
 if (localStorage.getItem("token")) {
   router.push("/");
 }
 const email = ref("");
 const password = ref("");
+const swal = inject("$swal");
+
 const Login = async () => {
   try {
     const res = await axios.post(
@@ -120,6 +122,12 @@ const Login = async () => {
     );
     console.log(res.status);
     if (res.status === 200) {
+      swal({
+        title: "Login Success",
+        text: "You have successfully logged in",
+        icon: "success",
+        button: "OK",
+      });
       localStorage.setItem("token", res.data.token);
       router.push("/");
     } else {

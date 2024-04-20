@@ -80,6 +80,24 @@ const routes = [
     name: 'contact',
     component: () => import('../views/ContactView.vue')
   },
+  // ngeresik
+  {
+    path: '/ngeresik',
+    name: 'ngeresik',
+    component: () => import('../views/NgeresikView.vue')
+  },
+  // sller by  id
+  {
+    path: '/seller/:id',
+    name: 'seller',
+    component: () => import('../views/SellerByIdView.vue')
+  },
+  //checkout
+  {
+    path: '/checkout',
+    name: 'checkout',
+    component: () => import('../views/CheckoutView.vue')
+  },
 ];
 
 

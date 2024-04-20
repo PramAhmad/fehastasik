@@ -50,21 +50,20 @@
                         </button>
                       </div>
                     </div>
-
                     <div class="mt-8">
                       <div class="flow-root">
                         <ul role="list" class="-my-6 divide-y divide-gray-200">
                           <li
-                            v-for="product in products"
-                            :key="product.id"
+                            v-for="item in chartItems"
+                            :key="item._id.$oid"
                             class="flex py-6"
                           >
                             <div
                               class="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200"
                             >
                               <img
-                                :src="product.imageSrc"
-                                :alt="product.imageAlt"
+                                :src="item.product.foto[0]"
+                                :alt="item.product.nama_produk"
                                 class="h-full w-full object-cover object-center"
                               />
                             </div>
@@ -75,24 +74,27 @@
                                   class="flex justify-between text-base font-medium text-gray-900"
                                 >
                                   <h3>
-                                    <a :href="product.href">{{
-                                      product.name
-                                    }}</a>
+                                    <router-link :to="item._id.$oid">{{
+                                      item.product.nama_produk
+                                    }}</router-link>
                                   </h3>
-                                  <p class="ml-4">{{ product.price }}</p>
+                                  <p class="ml-4">
+                                    {{ item.product.harga_diskon }}
+                                  </p>
                                 </div>
                               </div>
+                              <p class="mt-1 text-sm text-gray-500">
+                                {{ item.product.seller.nama_toko }}
+                              </p>
                               <div
                                 class="flex flex-1 items-end justify-between text-sm"
                               >
-                                <p class="text-gray-500">
-                                  Qty {{ product.quantity }}
-                                </p>
-
+                                <p class="text-gray-500">Qty {{ item.qty }}</p>
                                 <div class="flex">
                                   <button
                                     type="button"
                                     class="font-medium text-sky-500 hover:text-indigo-500"
+                                    @click="removeProduct(item._id.$oid)"
                                   >
                                     Remove
                                   </button>
@@ -110,30 +112,32 @@
                       class="flex justify-between text-base font-medium text-gray-900"
                     >
                       <p>Subtotal</p>
-                      <p>Rp 240000</p>
+                      <p>Rp {{ subtotal }}</p>
                     </div>
+
                     <p class="mt-0.5 text-sm text-gray-500">
-                      Pengiriman dan pajak di hitung saat checkout.
+                      Pengiriman dan pajak dihitung saat checkout.
                     </p>
                     <div class="mt-6">
-                      <a
-                        href="#"
+                      <router-link
+                        to="/checkout"
                         class="flex items-center justify-center rounded-md border border-transparent bg-sky-500 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-sky-600"
-                        >Checkout</a
+                        >Checkout</router-link
                       >
                     </div>
                     <div
                       class="mt-6 flex justify-center text-center text-sm text-gray-500"
                     >
                       <p>
-                        or{{ " " }}
+                        or
                         <button
                           type="button"
                           class="font-medium text-sky-500 hover:text-indigo-500"
                           @click="open = false"
                         >
-                          Continue Shopping
-                          <span aria-hidden="true"> &rarr;</span>
+                          Continue Shopping<span aria-hidden="true">
+                            &rarr;</span
+                          >
                         </button>
                       </p>
                     </div>
@@ -147,9 +151,11 @@
     </Dialog>
   </TransitionRoot>
 </template>
-  
-  <script setup>
-import { ref } from "vue";
+
+<script setup>
+import { ref, onMounted } from "vue";
+import axios from "axios";
+import { inject } from "vue";
 import {
   Dialog,
   DialogPanel,
@@ -159,32 +165,73 @@ import {
 } from "@headlessui/vue";
 import { XMarkIcon } from "@heroicons/vue/24/outline";
 
-const products = [
-  {
-    id: 1,
-    name: "Payung Onde Mande",
-    href: "#",
-
-    price: "Rp 300.000",
-    quantity: 1,
-    imageSrc:
-      "https://lh3.googleusercontent.com/pw/AP1GczPOxLLCAjpeU7ByyvgXxfr8EKEv0WHfMj5M5ywRc6GuFHTDTeI4v2LGTITi1PtqmOGpOg8EGlcj1bmlj3rz0p3B-PyNn4a14GqXhHE9jwJs2pG_KhXx8l4n9nRD3MlJPHG4yy94apBRMHJXDZEtcP2U=w1657-h932-s-no-gm?authuser=0",
-    imageAlt:
-      "Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt.",
-  },
-  {
-    id: 2,
-    name: "Kelom Geulis",
-    href: "#",
-
-    price: "Rp 200.000",
-    quantity: 1,
-    imageSrc:
-      "https://img.ws.mms.shopee.co.id/id-11134207-7qul9-lfdl3gaumge23d",
-    imageAlt:
-      "Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch.",
-  },
-];
-
+const chartItems = ref([]);
+const subtotal = ref(0);
 const open = ref(true);
+const swal = inject("$swal");
+const getCharts = async () => {
+  const token = localStorage.getItem("token");
+  if (token) {
+    axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+    try {
+      const res = await axios.get(
+        import.meta.env.VITE_API_URL + "customer/chart"
+      );
+      if (res.status === 200) {
+        chartItems.value = res.data.data;
+        subtotal.value = res.data.total_subtotal;
+      } else {
+        console.log(res.data);
+      }
+    } catch (error) {
+      console.error("Error fetching chart data:", error);
+    }
+  } else {
+    console.log("Token not found");
+  }
+};
+
+const removeProduct = async (productId) => {
+  const res = await swal.fire({
+    title: "Apakah Anda Yakin?",
+    text: "Data yang dihapus tidak bisa dikembalikan",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Ya",
+    cancelButtonText: "Tidak",
+  });
+  if (res.isConfirmed) {
+    const token = localStorage.getItem("token");
+    if (token) {
+      axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+      try {
+        const res = await axios.delete(
+          import.meta.env.VITE_API_URL + "customer/chart/" + productId
+        );
+        if (res.status === 200) {
+          getCharts();
+
+          swal.fire("Data berhasil dihapus", {
+            icon: "success",
+          });
+          window.location.reload();
+        } else {
+          console.log(res.data);
+        }
+      } catch (error) {
+        console.error("Error removing product from chart:", error);
+      }
+    } else {
+      console.log("Token not found");
+    }
+  } else {
+    swal.fire("Data tidak jadi dihapus", "", "info");
+  }
+};
+
+onMounted(() => {
+  getCharts();
+});
 </script>

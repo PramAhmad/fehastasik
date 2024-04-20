@@ -380,7 +380,11 @@
               </div>
 
               <!-- Cart -->
-              <div class="ml-4 flow-root lg:ml-6">
+
+              <div
+                class="ml-4 flow-root lg:ml-6"
+                v-if="route.name != `checkout`"
+              >
                 <button
                   @click="showChart()"
                   class="group -m-2 flex items-center p-2 mr-1"
@@ -391,7 +395,7 @@
                   />
                   <span
                     class="ml-2 mb-4 text-sm font-medium text-gray-700 group-hover:text-gray-800"
-                    >0</span
+                    >{{ countCart }}</span
                   >
                 </button>
               </div>
@@ -410,7 +414,7 @@ components: {
 }
 import axios from "axios";
 const isVisibled = ref(false);
-import { onMounted, ref } from "vue";
+import { inject, onMounted, ref } from "vue";
 import {
   Dialog,
   DialogPanel,
@@ -433,7 +437,8 @@ import {
   ShoppingBagIcon,
   XMarkIcon,
 } from "@heroicons/vue/24/outline";
-
+import { useRoute } from "vue-router";
+const route = useRoute();
 const navigation = {
   categories: [
     {
@@ -530,12 +535,13 @@ const navigation = {
     },
   ],
   pages: [
-    { name: "Ngurisik", href: "#" },
-    { name: "About Us", href: "#" },
+    { name: "Ngeresik", href: "/ngeresik" },
+    { name: "About Us", href: "/about" },
   ],
 };
-
+const countCart = ref(0);
 const user = ref(null);
+const swal = inject("$swal");
 const getUser = async () => {
   const token = localStorage.getItem("token");
   if (token) {
@@ -550,13 +556,40 @@ const getUser = async () => {
 function showChart() {
   isVisibled.value = !isVisibled.value;
 }
+function countChart() {
+  const token = localStorage.getItem("token");
+  if (token) {
+    axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+    axios.get(import.meta.env.VITE_API_URL + "customer/chart").then((res) => {
+      countCart.value = res.data.data.length;
+    });
+  } else {
+    console.log("Token not found");
+  }
+}
 const logout = () => {
-  localStorage.removeItem("token");
-  alert("logout berhasil");
-  window.location.reload();
+  // apkah yakin ingin loout
+  swal
+    .fire({
+      title: "Are you sure?",
+      text: "You will be logged out",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText: "Yes",
+      cancelButtonText: "No",
+    })
+    .then((result) => {
+      if (result.isConfirmed) {
+        localStorage.removeItem("token");
+        window.location.href = "/";
+      } else {
+        swal.fire("Cancelled", "You are still logged in", "info");
+      }
+    });
 };
 const open = ref(false);
 onMounted(() => {
+  countChart();
   getUser();
 });
 </script>
