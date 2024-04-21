@@ -5,7 +5,7 @@
       <div class="pt-10 px-4">
         <!-- title -->
         <h1 class="text-3xl font-bold text-s pt-10 text-center text-slate-900">
-          Product {{ route.params.category }}
+          Semua Products
         </h1>
         <div v-if="products">
           <div
@@ -18,7 +18,7 @@
             >
               <img
                 class="object-cover"
-                :src="product.foto[0]"
+                :src="product.foto"
                 alt="product image"
               />
             </div>
@@ -135,7 +135,7 @@
     <Footer />
   </div>
 </template>
-<script setup>
+  <script setup>
 import { onMounted } from "vue";
 import Navbar from "../components/Navbar.vue";
 import Footer from "../components/Footer.vue";
@@ -148,16 +148,13 @@ components: {
   Footer;
 }
 
-// get product by category
 const route = useRoute();
 
 const products = ref([]);
-const getProductByCategory = async () => {
-  const res = await axios.get(
-    import.meta.env.VITE_API_URL + "products/category/" + route.params.category
-  );
+const getProduct = async () => {
+  const res = await axios.get(import.meta.env.VITE_API_URL + "products");
   if (res.status == 200) {
-    products.value = res.data.data;
+    products.value = res.data.data.data;
     console.log(products.value);
   } else {
     alert(res.data);
@@ -166,8 +163,8 @@ const getProductByCategory = async () => {
   }
 };
 onMounted(() => {
-  getProductByCategory();
+  getProduct();
 });
 </script>
-<style lang="">
+  <style lang="">
 </style>

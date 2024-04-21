@@ -194,11 +194,11 @@
                   </div>
                   <div class="flex-1">
                     <h4 class="text-xl text-gray-900 font-semibold mb-2">
-                      Company growth
+                      Ekonmi Meningkat
                     </h4>
                     <p class="text-xs text-gray-500 leading-5">
-                      Company's remarkable growth journey as we continually
-                      innovate and drive towards new heights of success.
+                      Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                      Ad ullam sapiente officiis eum. Iure, mollitia!
                     </p>
                   </div>
                 </div>
@@ -212,7 +212,7 @@
                   </div>
                   <div class="flex-1">
                     <h4 class="text-xl text-gray-900 font-semibold mb-2">
-                      Company growth
+                      Pedagang di tasik Berkembang
                     </h4>
                     <p class="text-xs text-gray-500 leading-5">
                       Our very talented team members are the powerhouse of
@@ -226,15 +226,16 @@
               >
                 <div class="flex gap-5">
                   <div class="font-manrope text-2xl font-bold text-sky-500">
-                    625+
+                    6250+
                   </div>
                   <div class="flex-1">
                     <h4 class="text-xl text-gray-900 font-semibold mb-2">
-                      Projects Completed
+                      Prodct Terjual
                     </h4>
                     <p class="text-xs text-gray-500 leading-5">
-                      We have accomplished more than 625 projects worldwide and
-                      we are still counting many more.
+                      Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                      Exercitationem, debitis tempore consequuntur esse laborum
+                      nostrum. Fugit enim nisi soluta aperiam!
                     </p>
                   </div>
                 </div>
@@ -249,11 +250,11 @@
               <h2
                 class="font-manrope text-4xl text-white text-center font-bold mb-4"
               >
-                Subscribe to the latest offer
+                Dapatkan Informasi Terbaru Lewat Email
               </h2>
               <p class="text-white text-center mb-11 max-lg:max-w-2xl mx-auto">
-                Join our community of subscribers and receive regular updates
-                delivered straight to your inbox. It's quick, easy, and free
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Doloribus recusandae dolore, mollitia ipsa voluptas sequi.
               </p>
               <div
                 class="max-w-md mx-auto lg:bg-transparent lg:border border-gray-300 rounded-3xl max-lg:py-3 lg:rounded-full lg:h-12 lg:p-1.5 lg:flex-row gap-6 lg:gap-0 flex-col flex items-center justify-between"

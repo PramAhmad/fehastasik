@@ -464,25 +464,26 @@ const navigation = {
       ],
       sections: [
         {
-          id: "Makanan",
-          name: "Makanan",
-          items: [
-            { name: "Saroja", href: "#" },
-            { name: "Kerupuk", href: "#" },
-            { name: "Oncom", href: "#" },
-            { name: "Tahu Cihaji", href: "#" },
-            { name: "Seblak", href: "#" },
-          ],
-        },
-        {
           id: "Kerajinan",
           name: "Kerajinan",
           items: [
-            { name: "Payung Geulis", href: "#" },
-            { name: "Samak mendong", href: "#" },
-            { name: "Kelom Geulis", href: "#" },
+            { name: "Payung Geulis", href: "/category/payung-geulis" },
+            { name: "Samak mendong", href: "/category/samak-mending" },
+            { name: "Kelom Geulis", href: "/category/kelom-geulis" },
             { name: "Batik Tasikmalaya", href: "/category/batik" },
+            { name: "Anyaman Bambu", href: "/category/anyaman-bambu" },
             { name: "Kerajinan Lainya", href: "/pram" },
+          ],
+        },
+        {
+          id: "Makanan",
+          name: "Makanan",
+          items: [
+            { name: "Saroja", href: "/category/saroja" },
+
+            { name: "Oncom", href: "/category/oncom-tasik" },
+
+            { name: "Raginang", href: "/category/raginang" },
           ],
         },
       ],
@@ -510,25 +511,26 @@ const navigation = {
       ],
       sections: [
         {
-          id: "Makanan",
-          name: "Makanan",
-          items: [
-            { name: "Toko Bu Ratna", href: "#" },
-            { name: "Toko Kue Arta Jaya", href: "#" },
-            { name: "Oncom Balado", href: "#" },
-            { name: "Saroja UU", href: "#" },
-            { name: "Seblak Matima Biadab", href: "#" },
-          ],
-        },
-        {
           id: "Kerajinan",
           name: "Kerajinan",
           items: [
-            { name: "Payung Resik", href: "#" },
-            { name: "Selon Kelom", href: "#" },
-            { name: "Payung Diningrat", href: "#" },
-            { name: "Tatik Tasik Asik", href: "#" },
-            { name: "Toko Lainya", href: "/pram" },
+            { name: "Payung Geulis", href: "/category/payung-geulis" },
+            { name: "Samak mendong", href: "/category/samak-mending" },
+            { name: "Kelom Geulis", href: "/category/kelom-geulis" },
+            { name: "Batik Tasikmalaya", href: "/category/batik" },
+            { name: "Anyaman Bambu", href: "/category/anyaman-bambu" },
+            { name: "Kerajinan Lainya", href: "/pram" },
+          ],
+        },
+        {
+          id: "Makanan",
+          name: "Makanan",
+          items: [
+            { name: "Saroja", href: "/category/saroja" },
+
+            { name: "Oncom", href: "/category/oncom-tasik" },
+
+            { name: "Raginang", href: "/category/raginang" },
           ],
         },
       ],

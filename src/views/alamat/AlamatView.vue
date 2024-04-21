@@ -119,7 +119,21 @@ const deleteAlamat = async (id) => {
     swal.fire("Data tidak jadi dihapus", "", "info");
   }
 };
-
+const setUtama = async (id) => {
+  const token = localStorage.getItem("token");
+  if (token) {
+    axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+    const res = await axios.put(
+      import.meta.env.VITE_API_URL + `customer/alamat/utama/${id}`
+    );
+    getAlamat();
+    swal("Alamat Utama Berhasil Diubah", {
+      icon: "success",
+    });
+  } else {
+    axios.defaults.headers.common["Authorization"] = null;
+  }
+};
 onMounted(() => {
   getAlamat();
 });

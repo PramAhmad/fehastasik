@@ -27,7 +27,7 @@
             <div class="text-center">
               <div class="flex justify-center mx-auto">
                 <img
-                  class="w-44 md:h-44 sm:h-8"
+                  class="w-44 md:h-20 sm:h-8"
                   src="../assets/hastasik.png"
                   alt=""
                 />
@@ -93,7 +93,7 @@
                     class="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg focus:border-sky-400 dark:focus:border-sky-400 focus:ring-sky-400 focus:outline-none focus:ring focus:ring-opacity-40"
                   />
                 </div>
-                photo
+
                 <div class="mt-6">
                   <label for="photo" class="block mb-2 text-sm text-gray-600"
                     >Photo</label
@@ -152,13 +152,14 @@
 
 <script setup>
 import axios from "axios";
-import { ref } from "vue";
+import { inject, ref } from "vue";
 const email = ref("");
 const password = ref("");
 const nama = ref("");
 const no_hp = ref("");
 const photo = ref(null);
 const namalengkap = ref("");
+const swal = inject("swal");
 const handlePhoto = (e) => {
   photo.value = e.target.files[0];
 };
@@ -181,10 +182,10 @@ const Register = async () => {
       }
     );
     if (response.status == 200) {
-      alert("Register Berhasil");
+      swal("Register Berhasil", "Silahkan Login", "success");
       router.push("/login");
     } else {
-      alert("Register Gagal");
+      swal("Register Gagal", "Silahkan Coba Lagi", "error");
       email.value = "";
       password.value = "";
       nama.value = "";

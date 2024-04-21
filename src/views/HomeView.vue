@@ -19,18 +19,18 @@
               fugiat quaerat ratione error porro.s
             </p>
             <div class="flex mt-8">
-              <a
-                href="#"
+              <router-link
+                to="/products"
                 class="uppercase py-2 px-4 rounded-lg bg-sky-500 border-2 border-transparent text-white text-md mr-4 hover:bg-sky-400"
               >
                 Lihat product
-              </a>
-              <a
-                href="#"
+              </router-link>
+              <router-link
+                to="/about"
                 class="hidden md:block uppercase py-2 px-4 rounded-lg bg-transparent border-2 border-sky-500 text-sky-500 hover:bg-sky-500 hover:text-white text-md"
               >
-                Read more
-              </a>
+                About Us
+              </router-link>
             </div>
           </div>
           <div class="sm:w-1/3 lg:w-3/5 relative">

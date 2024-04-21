@@ -8,6 +8,12 @@ const routes = [
     component: HomeView
 
   },
+  // all product
+  {
+    path: '/products',
+    name: 'products',
+    component: () => import('../views/ProductsView.vue')
+  },
   //product detail
   {
     path: '/product/:id',
@@ -98,6 +104,12 @@ const routes = [
     name: 'checkout',
     component: () => import('../views/CheckoutView.vue')
   },
+  // ngeresik
+  {
+    path: '/ngeresik',
+    name: 'ngeresik',
+    component: () => import('../views/NgeresikView.vue')
+  }
 ];
 
 
