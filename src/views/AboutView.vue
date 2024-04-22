@@ -18,7 +18,7 @@
             <h1
               class="max-w-2xl mx-auto text-center font-manrope font-bold text-4xl text-gray-900 mb-5 md:text-5xl md:leading-normal"
             >
-              E-commerce Barand Exclusive dari
+              E-commerce Brand Exclusive dari
               <span class="text-sky-600">TASIKMALAYA </span>
             </h1>
             <p

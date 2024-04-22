@@ -16,11 +16,11 @@
 
             >
             <div
-              class="relative mx-3 mt-3 flex h-60 w-fulloverflow-hidden rounded-xl hover:scale-105 transition duration-500"
-             
-            >
+              class="relative p-2 mt-3 flex h-60 w-full  overflow-hidden rounded-xl hover:scale-105 transition duration-500"
+            
+             >
               <img
-                class="object-cover"
+                class="object-cover w-full h-full rounded-xl"
                 :src="product.foto[0]"
                 alt="product image"
               />

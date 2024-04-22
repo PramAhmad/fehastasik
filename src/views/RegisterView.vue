@@ -5,13 +5,13 @@
       <div class="flex justify-center h-screen">
         <div
           class="hidden bg-cover lg:block lg:w-1/2"
-          style="
-            background-image: url(https://lh3.googleusercontent.com/pw/AP1GczPOxLLCAjpeU7ByyvgXxfr8EKEv0WHfMj5M5ywRc6GuFHTDTeI4v2LGTITi1PtqmOGpOg8EGlcj1bmlj3rz0p3B-PyNn4a14GqXhHE9jwJs2pG_KhXx8l4n9nRD3MlJPHG4yy94apBRMHJXDZEtcP2U=w1657-h932-s-no-gm?authuser=0);
-          "
+          style="background-image: url('../assets/payung.jpg')"
         >
           <div class="flex items-center h-full px-20 bg-gray-900 bg-opacity-40">
             <div>
-              <h2 class="text-6xl font-bold text-white sm:text-3xl">Hatasik</h2>
+              <h2 class="text-6xl font-bold text-white sm:text-3xl">
+                Hastasik
+              </h2>
 
               <p class="max-w-xl mt-3 text-gray-300">
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. In
@@ -159,7 +159,7 @@ const nama = ref("");
 const no_hp = ref("");
 const photo = ref(null);
 const namalengkap = ref("");
-const swal = inject("swal");
+const swal = inject("$swal");
 const handlePhoto = (e) => {
   photo.value = e.target.files[0];
 };

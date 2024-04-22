@@ -35,7 +35,7 @@
           </div>
           <div class="sm:w-1/3 lg:w-3/5 relative">
             <img
-              src="../assets/KOLEHAS.png"
+              src="../assets/KOLASEHAS.png"
               class="max-w-xs md:max-w-xl m-auto"
             />
           </div>
