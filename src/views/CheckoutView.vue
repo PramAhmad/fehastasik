@@ -249,7 +249,10 @@
             </div>
             <div class="mt-6 flex items-center justify-between">
               <p class="text-sm font-medium text-gray-900">Total</p>
-              <p class="text-2xl font-semibold text-gray-900">
+              <p
+                class="text-2xl font-semibold text-gray-900"
+                v-if="selectedCost > 0"
+              >
                 <!-- convert to int subtotal and selected cost -->
                 <!-- remove . di subtotal llau jadiin int -->
                 {{ formatNumber(formatSubtotal() + selectedCost) }}

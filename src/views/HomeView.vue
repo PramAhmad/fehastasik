@@ -35,7 +35,7 @@
           </div>
           <div class="sm:w-1/3 lg:w-3/5 relative">
             <img
-              src="https://lh3.googleusercontent.com/pw/AP1GczOBG4wEYzXBuOJKCFAtCTPOHY7H6UtGa3-JNjAYTGQai3scvpj5GzFgGmDfb6BOgezMIk9Zbr6UKz4whiyKiABdN4P75x_uTareEFS13ReaaTWggAERLjfDWvUx9wWixiubN8FIB4b7t5qkFdSRDrjpaw=w621-h932-s-no-gm?authuser=0"
+              src="../assets/KOLEHAS.png"
               class="max-w-xs md:max-w-xl m-auto"
             />
           </div>

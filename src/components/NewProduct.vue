@@ -2,12 +2,13 @@
     <div>
           <section class="py-10">
         <div class="container flex px-6 pb-10 flex-wrap">
-            <div class="w-full border-2 bg-white py-2 border-gray-300">
-                <h2 class="text-3xl font-semibold text-s  text-center text-gray-700">
+            <div class="w-full border-2 bg-white py-2 border-gray-200">
+                <h2 class="text-3xl font-semibold text-s  text-center text-sky-600">
                 New Product
                 </h2>
             </div>
-            
+           
+    <p v-if="loading" class="custom-loader m-auto text-center mt-5"></p>
           <div
             class="relative  flex w-full my-5 md:mx-5 md:w-1/4 flex-col overflow-hidden rounded-lg border border-gray-100 bg-gray-50 shadow-md"
             v-for="product in products.data"
@@ -139,17 +140,45 @@ import axios from "axios";
 import { onMounted, ref } from "vue";
 
 let products = ref([]);
-
+const loading = ref(true);
 const getData = async () => {
+  loading.value = true;
   const res = await axios.get(import.meta.env.VITE_API_URL + `products`);
 
   products.value = res.data.data;
-  console.log(products.value);
+  loading.value = false;
 };
 
 onMounted(() => {
   getData();
 });
 </script>
-<style lang="">
+<style >
+.custom-loader {
+  width: 45px;
+  height: 40px;
+  --c: linear-gradient(#0ea5e9 0 0);
+  background: var(--c) 0% 100%, var(--c) 50% 100%, var(--c) 100% 100%;
+  background-size: 9px 100%;
+  background-repeat: no-repeat;
+  animation: b2 1s infinite linear;
+}
+
+@keyframes b2 {
+  20% {
+    background-size: 9px 60%, 9px 100%, 9px 100%;
+  }
+
+  40% {
+    background-size: 9px 80%, 9px 60%, 9px 100%;
+  }
+
+  60% {
+    background-size: 9px 100%, 9px 80%, 9px 60%;
+  }
+
+  80% {
+    background-size: 9px 100%, 9px 100%, 9px 80%;
+  }
+}
 </style>

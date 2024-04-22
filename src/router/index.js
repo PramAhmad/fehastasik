@@ -50,6 +50,12 @@ const routes = [
     name: 'update-profile',
     component: () => import('../views/UpdateProfileView.vue')
   },
+  // profile review
+  {
+    path: '/profile/review',
+    name: 'profile-review',
+    component: () => import('../views/ProfileReviewView.vue')
+  },
   // update user
   {
     path: '/user/update',
@@ -110,6 +116,7 @@ const routes = [
     name: 'ngeresik',
     component: () => import('../views/NgeresikView.vue')
   }
+
 ];
 
 
