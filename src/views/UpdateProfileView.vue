@@ -22,6 +22,7 @@
                 <label class="block text-gray-700">Photo</label>
                 <input
                   type="file"
+                  accept="image/*"
                   class="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg focus:border-sky-400 focus:ring-sky-400 focus:outline-none focus:ring focus:ring-opacity-40"
                   @change="onFileChange"
                 />
@@ -65,57 +66,73 @@
     <Footer />
   </div>
 </template>
+
 <script setup>
 import axios from "axios";
 import { onMounted, ref } from "vue";
 import Navbar from "../components/Navbar.vue";
 import Footer from "../components/Footer.vue";
 
-components: {
-  Navbar, Footer;
-}
-
 const newphoto = ref(null);
-const profile = ref([]);
+const profile = ref({
+  nama_lengkap: "",
+  phone_number: "",
+});
+
 const onFileChange = (e) => {
   newphoto.value = e.target.files[0];
+  console.log(newphoto.value);
 };
 
 const updateProfile = async () => {
-  console.log(newphoto.value);
-  if (newphoto.value != null) {
-    const formData = new FormData();
-    formData.append("photo", newphoto.value);
-    formData.append("nama_lengkap", profile.value.nama_lengkap);
-    formData.append("phone_number", profile.value.phone_number);
-    const res = await axios.put(
-      import.meta.env.VITE_API_URL + `customer/profile/update`,
-      formData
-    );
-    console.log(res);
-  } else {
-    const res = await axios.put(
-      import.meta.env.VITE_API_URL + `customer/profile/update`,
-      {
-        nama_lengkap: profile.value.nama_lengkap,
-        phone_number: profile.value.phone_number,
-      }
-    );
-    console.log(res);
+  try {
+    if (!profile.value.nama_lengkap || !profile.value.phone_number) {
+      console.error("Nama lengkap dan nomor telepon harus diisi.");
+      return;
+    }
+    console.log(newphoto.value);
+    if (newphoto.value) {
+      const res = await axios.post(
+        `${import.meta.env.VITE_API_URL}customer/profile/update`,
+        {
+          nama_lengkap: profile.value.nama_lengkap,
+          phone_number: profile.value.phone_number,
+          photo: newphoto.value,
+        },
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+    } else {
+      const res = await axios.post(
+        `${import.meta.env.VITE_API_URL}customer/profile/update`,
+        {
+          nama_lengkap: profile.value.nama_lengkap,
+          phone_number: profile.value.phone_number,
+        }
+      );
+    }
+  } catch (error) {
+    console.error(error);
   }
 };
 
 const getUser = async () => {
-  const token = localStorage.getItem("token");
-  if (token) {
-    axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
-    const res = await axios.get(
-      import.meta.env.VITE_API_URL + `customer/profile`
-    );
-    profile.value = res.data.data;
-    console.log(profile.value);
-  } else {
-    axios.defaults.headers.common["Authorization"] = null;
+  try {
+    const token = localStorage.getItem("token");
+    if (token) {
+      axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+      const res = await axios.get(
+        `${import.meta.env.VITE_API_URL}customer/profile`
+      );
+      profile.value = res.data.data;
+    } else {
+      axios.defaults.headers.common["Authorization"] = null;
+    }
+  } catch (error) {
+    console.error(error);
   }
 };
 
@@ -123,5 +140,6 @@ onMounted(() => {
   getUser();
 });
 </script>
+
 <style lang="">
 </style>

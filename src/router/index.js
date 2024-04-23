@@ -56,12 +56,13 @@ const routes = [
     name: 'profile-review',
     component: () => import('../views/ProfileReviewView.vue')
   },
-  // update user
+  // account setting
   {
-    path: '/user/update',
-    name: 'user-update',
-    component: () => import('../views/UserUpdateView.vue')
+    path: '/profile/account',
+    name: 'account-setting',
+    component: () => import('../views/AccountSettingView.vue')
   },
+
   // alamat
   {
     path: '/alamat',
@@ -115,14 +116,25 @@ const routes = [
     path: '/ngeresik',
     name: 'ngeresik',
     component: () => import('../views/NgeresikView.vue')
-  }
+  },
+  // my order
+  {
+    path: '/my-order',
+    name: 'my-order',
+    component: () => import('../views/MyOrderView.vue')
+
+
+  },
 
 ];
 
 
 const router = createRouter({
   history: createWebHashHistory(),
-  routes
+  routes,
+  scrollBehavior() {
+    return { top: 0 }
+  }
 })
 
 export default router

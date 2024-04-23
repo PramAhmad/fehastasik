@@ -23,7 +23,7 @@
           >
           <!-- akun saya -->
           <router-link
-            to="#"
+            to="/profile/account"
             class="block px-4 py-5 text-sm text-gray-900 bg-transparent border border-gray-200 hover:bg-gray-200"
             >Pengaturan Akun</router-link
           >
@@ -34,7 +34,7 @@
             >Alamat Saya</router-link
           >
           <router-link
-            to="#"
+            to="/my-order"
             class="block px-4 py-5 text-sm text-gray-900 bg-transparent border border-gray-200 hover:bg-gray-200"
             >Pesanan Saya</router-link
           >

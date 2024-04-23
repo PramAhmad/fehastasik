@@ -69,9 +69,9 @@
                   <TabPanel
                     v-for="category in navigation.categories"
                     :key="category.name"
-                    class="space-y-10 px-4 pb-8 pt-10"
+                    class="space-y-10 pb-8"
                   >
-                    <div class="grid grid-cols-2 gap-x-4">
+                    <div class="grid grid-cols-1 pr-10 p-4">
                       <div
                         v-for="item in category.featured"
                         :key="item.name"
@@ -248,15 +248,10 @@
                     <PopoverPanel
                       class="absolute inset-x-0 top-full text-sm text-gray-500"
                     >
-                      <div
-                        class="absolute inset-0 top-1/2 bg-white shadow max-w-7xl"
-                        aria-hidden="true"
-                      />
-
-                      <div class="relative bg-white border-2 max-w-7xl">
+                      <div class="relative bg-white border-2 container">
                         <div class="max-w-7xl px-8 mx-auto items-center">
                           <div class="grid grid-cols-2 gap-x-8 gap-y-10 py-16">
-                            <div class="col-start-2 grid grid-cols-2 gap-x-8">
+                            <div class="co l-start-2 grid grid-cols-2 gap-x-8">
                               <div
                                 v-for="item in category.featured"
                                 :key="item.name"
@@ -284,38 +279,6 @@
                                 <p aria-hidden="true" class="mt-1">
                                   Lihat Toko
                                 </p>
-                              </div>
-                            </div>
-                            <div
-                              class="row-start-1 grid grid-cols-3 gap-x-8 gap-y-10 text-sm"
-                            >
-                              <div
-                                v-for="section in category.sections"
-                                :key="section.name"
-                              >
-                                <p
-                                  :id="`${section.name}-heading`"
-                                  class="font-medium text-gray-900"
-                                >
-                                  {{ section.name }}
-                                </p>
-                                <ul
-                                  role="list"
-                                  :aria-labelledby="`${section.name}-heading`"
-                                  class="mt-6 space-y-6 sm:mt-4 sm:space-y-4"
-                                >
-                                  <li
-                                    v-for="item in section.items"
-                                    :key="item.name"
-                                    class="flex"
-                                  >
-                                    <router-link
-                                      :to="item.href"
-                                      class="hover:text-gray-800"
-                                      >{{ item.name }}</router-link
-                                    >
-                                  </li>
-                                </ul>
                               </div>
                             </div>
                           </div>
@@ -462,31 +425,6 @@ const navigation = {
             "Close up of Basic Tee fall bundle with off-white, ochre, olive, and black tees.",
         },
       ],
-      sections: [
-        {
-          id: "Kerajinan",
-          name: "Kerajinan",
-          items: [
-            { name: "Payung Geulis", href: "/category/payung-geulis" },
-            { name: "Samak mendong", href: "/category/samak-mending" },
-            { name: "Kelom Geulis", href: "/category/kelom-geulis" },
-            { name: "Batik Tasikmalaya", href: "/category/batik" },
-            { name: "Anyaman Bambu", href: "/category/anyaman-bambu" },
-            { name: "Kerajinan Lainya", href: "/pram" },
-          ],
-        },
-        {
-          id: "Makanan",
-          name: "Makanan",
-          items: [
-            { name: "Saroja", href: "/category/saroja" },
-
-            { name: "Oncom", href: "/category/oncom-tasik" },
-
-            { name: "Raginang", href: "/category/raginang" },
-          ],
-        },
-      ],
     },
     {
       id: "seller",
@@ -563,7 +501,11 @@ function countChart() {
   if (token) {
     axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
     axios.get(import.meta.env.VITE_API_URL + "customer/chart").then((res) => {
-      countCart.value = res.data.data.length;
+      if (res.data.data > 0) {
+        countCart.value = res.data.data.length;
+      } else {
+        countCart.value = 0;
+      }
     });
   } else {
     console.log("Token not found");
