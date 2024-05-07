@@ -4,8 +4,12 @@
     <div class="bg-white">
       <div class="flex justify-center h-screen">
         <div
-          class="hidden bg-cover lg:block lg:w-1/2"
-          style="background-image: url('../assets/payung.jpg')"
+          class="hidden lg:block lg:w-1/2"
+          style="
+            background: url(https://i.pinimg.com/originals/45/82/82/458282fc8c3a6ff82a1adcb30ebd35ff.jpg);
+            background-size: cover;
+            background-position: center;
+          "
         >
           <div class="flex items-center h-full px-20 bg-gray-900 bg-opacity-40">
             <div>
