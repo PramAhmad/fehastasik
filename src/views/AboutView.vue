@@ -22,14 +22,54 @@
               <span class="text-sky-600">TASIKMALAYA </span>
             </h1>
             <p
-              class="max-w-sm mx-auto text-center text-base font-normal leading-7 text-gray-500 mb-9"
+              class="md:max-w-[60%] mx-auto text-center text-base font-normal leading-7 text-gray-500 mb-9"
             >
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
-              minus dignissimos quisquam voluptate nobis cupiditate.
+            Didirikan pada tahun 2024, Hastasik merupakan sebuah platform e-commerce Tasikmalaya yang dihadirkan khusus untuk mendukung pengrajin lokal di Tasikmalaya menjangkau pasar yang lebih luas dengan memfasilitasi para pengrajin dalam melakukan penjualan kerajinan khas Tasikmalaya bersamaan dengan memperkenalkan budaya Tasikmalaya
             </p>
           </div>
         </section>
-
+        <!-- visi misi -->
+        <section class="py-14 lg:py-24 relative">
+          <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-9">
+              <div class="lg:pl-[100px] flex md:pt-16">
+                <div class="data w-full">
+                  <h2
+                    class="font-manrope font-bold text-4xl lg:text-5xl text-black mb-9 max-lg:text-center relative"
+                  >
+                    Visi
+                  </h2>
+                  <p
+                    class="font-normal text-xl leading-8 text-gray-500 max-lg:text-center max-w-2xl mx-auto"
+                  >
+                    Menjadi E-Commerce Terbesar di Tasikmalaya dan Menjadi
+                    Platform Penjualan Kerajinan Khas Tasikmalaya
+                  </p>
+                </div>
+              </div>
+              <!-- misi -->
+              <div>
+                <div class="data w-full">
+                  <h2
+                    class="font-manrope font-bold text-4xl lg:text-5xl text-black mb-9 max-lg:text-center relative"
+                  >
+                    Misi
+                  </h2>
+                  <p
+                    class="font-normal text-xl leading-8 text-gray-500 max-lg:text-center max-w-2xl mx-auto"
+                  >
+                <ul class="text-gray-600 list-item">
+                  <li>Mengangkat dan memperkenalkan kerajinan tangan Tasikmalaya ke pasar yang lebih luas</li>
+                  <li>Memberikan platform bagi pengrajin untuk berkembang dan bersaing di pasar modern dengan alat dan pelatihan e-commerce yang efektif</li>
+                  <li>Berinovasi dan mengadaptasi teknologi terbaru untuk meningkatkan pengalaman belanja online dan memudahkan akses pasar bagi pengrajin</li>
+                  <li>Memperkenalkan dan mempromosikan keunikan budaya Tasikmalaya, termasuk tarian, musik, kuliner, dan tradisi lokal, sebagai bagian integral dari pengalaman belanja</li>
+                  
+                </ul></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
         <section class="py-14 lg:py-24 relative">
           <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-9">
@@ -50,16 +90,7 @@
                   <p
                     class="font-normal text-xl leading-8 text-gray-500 max-lg:text-center max-w-2xl mx-auto"
                   >
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Sunt blanditiis amet, earum iusto assumenda atque quam
-                    voluptate ullam voluptatum ab tempora. Error aliquam
-                    exercitationem asperiores aliquid iste vitae repudiandae
-                    magni optio iure placeat quidem, tenetur obcaecati, hic,
-                    mollitia ab quis necessitatibus! Quasi illum ullam aliquam
-                    inventore quam iste debitis a accusamus illo, exercitationem
-                    necessitatibus doloribus, consequatur autem! A debitis ipsum
-                    distinctio, aperiam numquam, cumque quae fuga placeat
-                    expedita soluta ipsam!
+                  Pemimpin utama perusahaan yang memiliki tanggung jawab untuk merumuskan atau memutuskan suatu strategi dan kebijakan, serta bertugas untuk menyampaikan dan menciptakan visi perusahaan kepada stakeholder dan selalu memastikan bahwa setiap departemen beroperasi sesuai dengan arah tujuan perusahaan. 
                   </p>
                 </div>
               </div>

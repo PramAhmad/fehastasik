@@ -509,7 +509,7 @@ function countChart() {
     });
   } else {
     console.log("Token not found");
-  }s
+  }
 }
 const logout = () => {
   swal
