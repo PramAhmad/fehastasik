@@ -14,9 +14,8 @@
               </h2>
 
               <p class="max-w-xl mt-3 text-gray-300">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. In
-                autem ipsa, nulla laboriosam dolores, repellendus perferendis
-                libero suscipit nam temporibus molestiae
+                E-Commerce Lokal Tasikmalaya Guna Memfasilitasi Penjualan
+                Kerajinan Khas Tasikmalaya Dan Mempromosikan Budaya Tasikmalaya
               </p>
             </div>
           </div>

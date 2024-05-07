@@ -130,6 +130,8 @@ const routes = [
     name: 'admin',
     component: () => import('../views/AdminView.vue')
   },
+  // dashboard
+
 
 ];
 
