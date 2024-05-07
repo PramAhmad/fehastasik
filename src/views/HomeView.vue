@@ -15,8 +15,8 @@
               <span class="text-5xl sm:text-7xl"> Tasik </span>
             </h1>
             <p class="text-sm sm:text-base text-gray-700">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta
-              fugiat quaerat ratione error porro.s
+              E-Commerce Lokal Tasikmalaya Guna Memfasilitasi Penjualan
+              Kerajinan Khas Tasikmalaya Dan Mempromosikan Budaya Tasikmalaya
             </p>
             <div class="flex mt-8">
               <router-link

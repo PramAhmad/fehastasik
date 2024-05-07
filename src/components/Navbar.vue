@@ -509,10 +509,9 @@ function countChart() {
     });
   } else {
     console.log("Token not found");
-  }
+  }s
 }
 const logout = () => {
-  // apkah yakin ingin loout
   swal
     .fire({
       title: "Are you sure?",
